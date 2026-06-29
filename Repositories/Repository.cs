@@ -5,7 +5,6 @@ using MiniProject2.DAL;
 
 namespace MiniProject2.Repositories
 {
-    // Program.cs-in rahat oxuması üçün bunu da public edirik
     public class Repository<T> : IRepository<T> where T : class, new()
     {
         private readonly AppDbContext _context;
@@ -27,7 +26,6 @@ namespace MiniProject2.Repositories
             return _table.AsNoTracking().ToList();
         }
 
-        // Müəllimin ekrandakı tam kod blokunu bura tətbiq etdik (image_afdb52.jpg)
         public T? GetById(int id, bool isTracking = false)
         {
             if (isTracking)
